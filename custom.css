@@ -7,15 +7,30 @@
 }
 
 .urms-skin-enabled body {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  background: linear-gradient(135deg, #dbeafe 0%, #b6e0fe 100%) !important;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif !important;
   color: #333 !important;
   margin: 0 !important;
   padding: 20px !important;
   min-height: 100vh !important;
   line-height: 1.6 !important;
+  position: relative;
+  min-height: 100vh !important;
+  overflow-x: hidden;
 }
-
+.urms-skin-enabled body::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 120vw;
+  height: 120vh;
+  transform: translateX(-50%);
+  background: radial-gradient(circle at 50% 30%, #fff8 0%, #fff0 70%),
+    radial-gradient(circle at 60% 80%, #fff6 0%, #fff0 80%);
+  z-index: 0;
+  pointer-events: none;
+}
 .urms-skin-enabled .urms-modern-wrapper {
   max-width: 1200px;
   margin: 0 auto;
@@ -25,6 +40,8 @@
   backdrop-filter: blur(10px);
   overflow: hidden;
   min-height: calc(100vh - 40px);
+  background: none !important;
+  box-shadow: none !important;
 }
 
 /* Header Styles */
@@ -101,85 +118,176 @@
   to { opacity: 0.95; transform: translateY(0) scale(1); }
 }
 
+.urms-skin-enabled .urms-login-visual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto 0 auto;
+  padding-top: 32px;
+  z-index: 2;
+}
+.urms-skin-enabled .urms-login-icon {
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(135deg, #e0e7ff 60%, #bae6fd 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(80,120,255,0.10);
+  margin-bottom: 18px;
+  font-size: 2.2rem;
+  color: #2563eb;
+  border: 1.5px solid #e0e7ff;
+  position: relative;
+  z-index: 2;
+}
+.urms-skin-enabled .urms-login-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 6px;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+.urms-skin-enabled .urms-login-subtitle {
+  font-size: 1rem;
+  color: #6b7280;
+  margin-bottom: 24px;
+  text-align: center;
+  max-width: 320px;
+}
 .urms-skin-enabled .login-container {
-  background: rgba(255,255,255,0.75) !important;
-  box-shadow: 0 12px 40px 0 rgba(80,80,180,0.18), 0 1.5px 8px 0 rgba(0,0,0,0.08) !important;
-  backdrop-filter: blur(18px) saturate(1.2);
-  border: 1.5px solid rgba(200,200,255,0.18) !important;
-  transition: box-shadow 0.4s cubic-bezier(.4,2,.6,1), background 0.4s cubic-bezier(.4,2,.6,1);
+  background: rgba(255,255,255,0.82) !important;
+  box-shadow: 0 12px 40px 0 rgba(80,80,180,0.13), 0 1.5px 8px 0 rgba(0,0,0,0.06) !important;
+  border-radius: 22px !important;
+  border: 1.5px solid rgba(200,220,255,0.18) !important;
+  padding: 40px 32px 32px 32px !important;
+  margin-top: 0 !important;
+  margin-bottom: 48px !important;
+  position: relative;
+  z-index: 2;
+  min-width: 340px;
+  max-width: 400px !important;
   animation: fadeInLoginCard 0.7s cubic-bezier(.4,2,.6,1) 0.2s both;
 }
-
-@keyframes fadeInLoginCard {
-  from { opacity: 0; transform: translateY(40px) scale(0.98); }
-  to { opacity: 1; transform: translateY(0) scale(1); }
+.urms-skin-enabled .login-container td {
+  padding: 10px 0 !important;
+  border: none !important;
 }
-
 .urms-skin-enabled .login-container .modern-input,
 .urms-skin-enabled .login-container input[type="text"],
 .urms-skin-enabled .login-container input[type="password"] {
-  background: rgba(255,255,255,0.85) !important;
-  border: 2px solid #e1e5e9 !important;
-  box-shadow: 0 1.5px 6px rgba(0,0,0,0.04) !important;
-  border-radius: 14px !important;
-  font-size: 17px !important;
+  background: #f3f6fa !important;
+  border: 1.5px solid #e5e7eb !important;
+  border-radius: 12px !important;
+  font-size: 1rem !important;
   margin-bottom: 10px !important;
+  padding: 14px 16px !important;
+  box-shadow: 0 1.5px 6px rgba(0,0,0,0.03) !important;
   transition: box-shadow 0.3s, border 0.3s;
 }
 .urms-skin-enabled .login-container .modern-input:focus,
 .urms-skin-enabled .login-container input[type="text"]:focus,
 .urms-skin-enabled .login-container input[type="password"]:focus {
-  border-color: #007BFF !important;
-  box-shadow: 0 0 0 4px rgba(0,123,255,0.13) !important;
+  border-color: #2563eb !important;
+  box-shadow: 0 0 0 3px rgba(37,99,235,0.10) !important;
   background: #fff !important;
+}
+.urms-skin-enabled .urms-forgot-link {
+  display: block;
+  text-align: right;
+  font-size: 0.98rem;
+  color: #2563eb !important;
+  margin-bottom: 8px;
+  margin-top: -6px;
+  text-decoration: none !important;
+  font-weight: 500;
+}
+.urms-skin-enabled .urms-forgot-link:hover {
+  text-decoration: underline !important;
+  color: #1d4ed8 !important;
+}
+.urms-skin-enabled .urms-login-divider {
+  width: 100%;
+  margin: 18px 0 10px 0;
+  text-align: center;
+}
+.urms-skin-enabled .urms-login-divider hr {
+  border: none;
+  border-top: 1.5px solid #e5e7eb;
+  margin: 0;
 }
 .urms-skin-enabled .login-container .modern-button,
 .urms-skin-enabled .login-container input[type="button"],
 .urms-skin-enabled .login-container input[type="submit"] {
-  background: linear-gradient(135deg, #007BFF 60%, #0056b3 100%) !important;
-  border-radius: 14px !important;
-  font-size: 17px !important;
+  background: linear-gradient(135deg, #222 60%, #444 100%) !important;
+  color: #fff !important;
+  border-radius: 12px !important;
+  font-size: 1.08rem !important;
   font-weight: 700 !important;
-  letter-spacing: 1px !important;
-  box-shadow: 0 4px 18px rgba(0,123,255,0.13) !important;
-  margin-top: 16px !important;
+  letter-spacing: 0.5px !important;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.10) !important;
+  margin-top: 10px !important;
+  padding: 14px 0 !important;
   transition: box-shadow 0.3s, transform 0.2s;
+  text-transform: none !important;
 }
 .urms-skin-enabled .login-container .modern-button:hover,
 .urms-skin-enabled .login-container input[type="button"]:hover,
 .urms-skin-enabled .login-container input[type="submit"]:hover {
-  box-shadow: 0 8px 32px rgba(0,123,255,0.22) !important;
+  box-shadow: 0 8px 32px rgba(37,99,235,0.13) !important;
   transform: translateY(-2px) scale(1.03) !important;
 }
-/* Dark mode adaptation for login card and logo */
-@media (prefers-color-scheme: dark) {
+@media (max-width: 600px) {
   .urms-skin-enabled .login-container {
-    background: rgba(30,34,54,0.82) !important;
-    border: 1.5px solid rgba(80,80,180,0.22) !important;
-    box-shadow: 0 12px 40px 0 rgba(30,34,54,0.28), 0 1.5px 8px 0 rgba(0,0,0,0.18) !important;
+    padding: 24px 8px 18px 8px !important;
+    min-width: 0;
+    max-width: 98vw !important;
   }
-  .urms-skin-enabled .urms-login-logo {
+  .urms-skin-enabled .urms-login-visual {
+    padding-top: 18px;
+  }
+}
+/* Dark mode adaptation for login card and visuals */
+@media (prefers-color-scheme: dark) {
+  .urms-skin-enabled body {
+    background: linear-gradient(135deg, #23263a 0%, #1e2236 100%) !important;
+  }
+  .urms-skin-enabled .login-container {
+    background: rgba(30,34,54,0.92) !important;
+    border: 1.5px solid rgba(80,80,180,0.22) !important;
+    box-shadow: 0 12px 40px 0 rgba(30,34,54,0.22), 0 1.5px 8px 0 rgba(0,0,0,0.18) !important;
+  }
+  .urms-skin-enabled .urms-login-title {
     color: #e6e9f0;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.18);
+  }
+  .urms-skin-enabled .urms-login-subtitle {
+    color: #b6bdd6;
+  }
+  .urms-skin-enabled .urms-login-icon {
+    background: linear-gradient(135deg, #23263a 60%, #1e2236 100%);
+    color: #4a90e2;
+    border: 1.5px solid #23263a;
   }
   .urms-skin-enabled .login-container .modern-input,
   .urms-skin-enabled .login-container input[type="text"],
   .urms-skin-enabled .login-container input[type="password"] {
-    background: rgba(40,44,64,0.92) !important;
+    background: #23263a !important;
     color: #e6e9f0 !important;
-    border: 2px solid #3a3f5a !important;
+    border: 1.5px solid #3a3f5a !important;
   }
   .urms-skin-enabled .login-container .modern-input:focus,
   .urms-skin-enabled .login-container input[type="text"]:focus,
   .urms-skin-enabled .login-container input[type="password"]:focus {
     background: #23263a !important;
     border-color: #4a90e2 !important;
-    box-shadow: 0 0 0 4px rgba(74,144,226,0.13) !important;
+    box-shadow: 0 0 0 3px rgba(74,144,226,0.13) !important;
   }
   .urms-skin-enabled .login-container .modern-button,
   .urms-skin-enabled .login-container input[type="button"],
   .urms-skin-enabled .login-container input[type="submit"] {
-    background: linear-gradient(135deg, #4a90e2 60%, #0056b3 100%) !important;
+    background: linear-gradient(135deg, #23263a 60%, #4a90e2 100%) !important;
     color: #e6e9f0 !important;
   }
 }
