@@ -78,19 +78,16 @@
       if (mainTable) {
         mainTable.classList.add('login-container');
         
-        // Inject logo/title if not already present
-        if (!document.querySelector('.urms-login-logo')) {
-          const logoDiv = document.createElement('div');
-          logoDiv.className = 'urms-login-logo';
-          logoDiv.textContent = 'URMS Modern Login';
-          logoDiv.setAttribute('aria-label', 'URMS Modern Login');
-          logoDiv.style.textAlign = 'center';
-          logoDiv.style.fontWeight = 'bold';
-          logoDiv.style.fontSize = '2rem';
-          logoDiv.style.marginBottom = '24px';
-          logoDiv.style.letterSpacing = '1px';
-          logoDiv.style.userSelect = 'none';
-          mainTable.parentNode.insertBefore(logoDiv, mainTable);
+        // Inject icon, title, and subtitle if not already present
+        if (!document.querySelector('.urms-login-visual')) {
+          const visualDiv = document.createElement('div');
+          visualDiv.className = 'urms-login-visual';
+          visualDiv.innerHTML = `
+            <div class="urms-login-icon"><span>→</span></div>
+            <div class="urms-login-title">Sign in with email</div>
+            <div class="urms-login-subtitle">Access your ULAB URMS account with your credentials.</div>
+          `;
+          mainTable.parentNode.insertBefore(visualDiv, mainTable);
         }
         
         // Find and enhance form elements
@@ -103,7 +100,23 @@
         const buttons = mainTable.querySelectorAll('input[type="button"], input[type="submit"]');
         buttons.forEach(button => {
           button.classList.add('modern-button');
+          button.value = 'Get Started';
         });
+        
+        // Align 'Forgot password?' right if present
+        const forgot = Array.from(mainTable.querySelectorAll('a')).find(a => a.textContent.toLowerCase().includes('forgot'));
+        if (forgot) {
+          forgot.classList.add('urms-forgot-link');
+        }
+        
+        // Add divider above the button if not present
+        if (!mainTable.querySelector('.urms-login-divider')) {
+          const divider = document.createElement('div');
+          divider.className = 'urms-login-divider';
+          divider.innerHTML = '<hr />';
+          const btn = mainTable.querySelector('input[type="button"], input[type="submit"]');
+          if (btn) btn.parentNode.insertBefore(divider, btn);
+        }
       }
       
       console.log('URMS Skin: Login page enhanced');
