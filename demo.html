@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URMS Demo - Before & After</title>
+    <link rel="stylesheet" href="custom.css">
+    <style>
+        /* Demo-specific styles */
+        .demo-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .demo-section {
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .demo-header {
+            background: #f8f9fa;
+            padding: 15px;
+            font-weight: bold;
+            text-align: center;
+            border-bottom: 2px solid #ddd;
+        }
+        .demo-content {
+            padding: 20px;
+            min-height: 400px;
+        }
+        
+        /* Original URMS styles simulation */
+        .original-urms {
+            background: white;
+            font-family: Arial, sans-serif;
+        }
+        .original-urms table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .original-urms td {
+            padding: 8px;
+            border: 1px solid #ccc;
+        }
+        .original-urms input {
+            padding: 5px;
+            border: 1px solid #999;
+        }
+        .original-urms .header-row {
+            background: #4682B4;
+            color: white;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        /* Toggle button for demo */
+        .demo-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            z-index: 10000;
+            box-shadow: 0 4px 12px rgba(0,123,255,0.3);
+        }
+        
+        @media (max-width: 768px) {
+            .comparison {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-container">
+        <h1 style="text-align: center; color: #007BFF; margin-bottom: 30px;">
+            🎨 URMS Modern Skin - Before & After Demo
+        </h1>
+        
+        <div class="comparison">
+            <!-- Original URMS Design -->
+            <div class="demo-section">
+                <div class="demo-header" style="background: #dc3545; color: white;">
+                    ❌ Original URMS (Before)
+                </div>
+                <div class="demo-content original-urms">
+                    <table>
+                        <tr>
+                            <td class="header-row">ULAB Students Panel - Login</td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center; padding: 40px;">
+                                <strong>Please login!</strong><br><br>
+                                <table style="margin: 0 auto;">
+                                    <tr>
+                                        <td><strong>StudentID :</strong></td>
+                                        <td><input type="text" style="width: 150px;"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Password :</strong></td>
+                                        <td><input type="password" style="width: 150px;"></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2" style="text-align: center; padding-top: 15px;">
+                                            <input type="button" value="login" style="margin-right: 10px;">
+                                            <input type="button" value="close">
+                                        </td>
+                                    </tr>
+                                </table>
+                                <br>
+                                <a href="#" style="color: blue;">Forgot your password?</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="background: #4682B4; color: white; text-align: center; font-size: 12px;">
+                                System developed by: ValuePLUS Computer Systems Ltd.
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- Modern Skin Design -->
+            <div class="demo-section urms-skin-enabled">
+                <div class="demo-header" style="background: #28a745; color: white;">
+                    ✅ Modern Skin (After)
+                </div>
+                <div class="demo-content">
+                    <div class="urms-modern-wrapper">
+                        <table>
+                            <tr>
+                                <td style="background: linear-gradient(135deg, #007BFF, #0056b3); color: white; text-align: center; padding: 20px; font-size: 24px; font-weight: 600;">
+                                    ULAB Students Panel - Login
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 0;">
+                                    <div class="login-container">
+                                        <div style="text-align: center; margin-bottom: 30px;">
+                                            <h2 style="color: #333; margin: 0;">Please login!</h2>
+                                        </div>
+                                        <table style="width: 100%; border: none;">
+                                            <tr>
+                                                <td style="border: none; padding: 10px 0;">
+                                                    <label style="display: block; margin-bottom: 5px; font-weight: 500;">StudentID:</label>
+                                                    <input type="text" class="modern-input" placeholder="Enter your Student ID">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="border: none; padding: 10px 0;">
+                                                    <label style="display: block; margin-bottom: 5px; font-weight: 500;">Password:</label>
+                                                    <input type="password" class="modern-input" placeholder="Enter your password">
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="border: none; padding: 20px 0 10px 0;">
+                                                    <button class="modern-button">LOGIN</button>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <div style="text-align: center; margin-top: 20px;">
+                                            <a href="#" style="color: #007BFF; text-decoration: none;">Forgot your password?</a>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="background: #f8f9fa; color: #6c757d; text-align: center; padding: 20px; font-size: 12px; border: none;">
+                                    System developed by: ValuePLUS Computer Systems Ltd.
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Dashboard Demo -->
+        <h2 style="text-align: center; margin: 40px 0 20px 0; color: #007BFF;">Dashboard Comparison</h2>
+        <div class="comparison">
+            <!-- Original Dashboard -->
+            <div class="demo-section">
+                <div class="demo-header" style="background: #dc3545; color: white;">
+                    ❌ Original Dashboard
+                </div>
+                <div class="demo-content original-urms">
+                    <table>
+                        <tr>
+                            <td class="header-row">Home | Teacher Evaluation | Course Evaluation | Schedule | Billing | Result | Profile | Logout</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 20px;">
+                                <strong>Semester:</strong> 252 (Summer 2025) <strong>Student:</strong> 223014193 Saiful Islam<br>
+                                <strong>Adviser:</strong> Ms. Suravi Akhter <strong>Email:</strong> suravi.akhter@ulab.edu.bd
+                                <br><br>
+                                <a href="#">Billing History</a><br>
+                                <a href="#">Current Status</a><br>
+                                <a href="#">Preregistration</a><br>
+                                <a href="#">Class Schedule</a><br>
+                                <a href="#">My Profile</a><br>
+                                <a href="#">Change Password</a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            
+            <!-- Modern Dashboard -->
+            <div class="demo-section urms-skin-enabled">
+                <div class="demo-header" style="background: #28a745; color: white;">
+                    ✅ Modern Dashboard
+                </div>
+                <div class="demo-content dashboard-page">
+                    <div class="urms-modern-wrapper">
+                        <table style="background: linear-gradient(135deg, #007BFF, #0056b3); margin: 0;">
+                            <tr>
+                                <td style="padding: 15px 20px; color: white;">
+                                    <a href="#" class="nav-link">Home</a>
+                                    <a href="#" class="nav-link">Teacher Evaluation</a>
+                                    <a href="#" class="nav-link">Course Evaluation</a>
+                                    <a href="#" class="nav-link">Schedule</a>
+                                    <a href="#" class="nav-link">Billing</a>
+                                    <a href="#" class="nav-link">Result</a>
+                                    <a href="#" class="nav-link">Profile</a>
+                                    <a href="#" class="nav-link">Logout</a>
+                                </td>
+                            </tr>
+                        </table>
+                        <table style="background: white; border-radius: 15px; box-shadow: 0 8px 25px rgba(0,0,0,0.08); margin: 20px 0;">
+                            <tr>
+                                <td style="padding: 30px; border: none;">
+                                    <div style="background: linear-gradient(135deg, #f8f9fa, #e9ecef); padding: 20px; border-radius: 10px; margin-bottom: 20px;">
+                                        <strong style="color: #007BFF;">Semester:</strong> 252 (Summer 2025) 
+                                        <strong style="color: #007BFF;">Student:</strong> 223014193 Saiful Islam<br>
+                                        <strong style="color: #007BFF;">Adviser:</strong> Ms. Suravi Akhter 
+                                        <strong style="color: #007BFF;">Email:</strong> suravi.akhter@ulab.edu.bd
+                                    </div>
+                                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
+                                        <a href="#" style="display: block; padding: 15px; background: #f8f9fa; border-radius: 8px; text-decoration: none; color: #007BFF; border-left: 4px solid #007BFF;">📊 Billing History</a>
+                                        <a href="#" style="display: block; padding: 15px; background: #f8f9fa; border-radius: 8px; text-decoration: none; color: #007BFF; border-left: 4px solid #28a745;">✅ Current Status</a>
+                                        <a href="#" style="display: block; padding: 15px; background: #f8f9fa; border-radius: 8px; text-decoration: none; color: #007BFF; border-left: 4px solid #ffc107;">📝 Preregistration</a>
+                                        <a href="#" style="display: block; padding: 15px; background: #f8f9fa; border-radius: 8px; text-decoration: none; color: #007BFF; border-left: 4px solid #17a2b8;">📅 Class Schedule</a>
+                                        <a href="#" style="display: block; padding: 15px; background: #f8f9fa; border-radius: 8px; text-decoration: none; color: #007BFF; border-left: 4px solid #6f42c1;">👤 My Profile</a>
+                                        <a href="#" style="display: block; padding: 15px; background: #f8f9fa; border-radius: 8px; text-decoration: none; color: #007BFF; border-left: 4px solid #dc3545;">🔒 Change Password</a>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Features List -->
+        <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 40px; border-radius: 20px; margin: 40px 0;">
+            <h2 style="text-align: center; margin-bottom: 30px;">🚀 Key Features</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px;">
+                    <h3>🎨 Modern Design</h3>
+                    <p>Beautiful gradients, modern typography, and clean layouts</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px;">
+                    <h3>📱 Responsive</h3>
+                    <p>Works perfectly on desktop, tablet, and mobile devices</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px;">
+                    <h3>🔄 Toggle Feature</h3>
+                    <p>Switch between original and modern design instantly</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px;">
+                    <h3>⚡ Fast & Lightweight</h3>
+                    <p>No performance impact, loads instantly</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px;">
+                    <h3>🔒 Secure</h3>
+                    <p>No data collection, works only on URMS domain</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px;">
+                    <h3>🛠️ Non-Invasive</h3>
+                    <p>Preserves all original functionality</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Installation Steps -->
+        <div style="background: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+            <h2 style="text-align: center; color: #007BFF; margin-bottom: 30px;">📦 Installation Steps</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                <div style="text-align: center; padding: 20px;">
+                    <div style="width: 60px; height: 60px; background: #007BFF; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: bold; margin: 0 auto 15px;">1</div>
+                    <h3>Open Extensions</h3>
+                    <p>Go to chrome://extensions/ or edge://extensions/</p>
+                </div>
+                <div style="text-align: center; padding: 20px;">
+                    <div style="width: 60px; height: 60px; background: #28a745; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: bold; margin: 0 auto 15px;">2</div>
+                    <h3>Enable Developer Mode</h3>
+                    <p>Toggle "Developer mode" in top-right corner</p>
+                </div>
+                <div style="text-align: center; padding: 20px;">
+                    <div style="width: 60px; height: 60px; background: #ffc107; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: bold; margin: 0 auto 15px;">3</div>
+                    <h3>Load Extension</h3>
+                    <p>Click "Load unpacked" and select urms-skin folder</p>
+                </div>
+                <div style="text-align: center; padding: 20px;">
+                    <div style="width: 60px; height: 60px; background: #17a2b8; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; font-weight: bold; margin: 0 auto 15px;">4</div>
+                    <h3>Visit URMS</h3>
+                    <p>Go to urms-online.ulab.edu.bd and enjoy!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Demo Toggle Button -->
+    <button class="demo-toggle" onclick="toggleDemo()">🎨 Toggle Demo</button>
+    
+    <script src="content.js"></script>
+    <script>
+        function toggleDemo() {
+            const isEnabled = document.documentElement.classList.contains('urms-skin-enabled');
+            if (isEnabled) {
+                document.documentElement.classList.remove('urms-skin-enabled');
+                document.querySelector('.demo-toggle').textContent = '📄 Show Original';
+            } else {
+                document.documentElement.classList.add('urms-skin-enabled');
+                document.querySelector('.demo-toggle').textContent = '🎨 Toggle Demo';
+            }
+        }
+        
+        // Initialize with skin enabled
+        document.documentElement.classList.add('urms-skin-enabled');
+        
+        console.log('URMS Demo loaded successfully!');
+    </script>
+</body>
+</html>

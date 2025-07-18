@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URMS Extension Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .section {
+            background: #f5f5f5;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        .file-list {
+            background: #e8f4f8;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        .step {
+            background: #fff;
+            padding: 15px;
+            margin: 10px 0;
+            border-left: 4px solid #007BFF;
+            border-radius: 0 5px 5px 0;
+        }
+        code {
+            background: #f1f1f1;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+        .success {
+            color: #28a745;
+            font-weight: bold;
+        }
+        .warning {
+            color: #ffc107;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>🎨 URMS Modern Skin Extension</h1>
+    
+    <div class="section">
+        <h2>✅ Extension Files Created Successfully</h2>
+        <div class="file-list">
+            <h3>Project Structure:</h3>
+            <ul>
+                <li><code>manifest.json</code> - Extension configuration and permissions</li>
+                <li><code>content.js</code> - JavaScript for DOM manipulation and page enhancement</li>
+                <li><code>custom.css</code> - Modern styling rules and responsive design</li>
+                <li><code>README.md</code> - Comprehensive documentation and installation guide</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>🚀 Installation Instructions</h2>
+        
+        <div class="step">
+            <h3>Step 1: Open Browser Extensions</h3>
+            <p>Navigate to your browser's extensions page:</p>
+            <ul>
+                <li><strong>Chrome:</strong> <code>chrome://extensions/</code></li>
+                <li><strong>Edge:</strong> <code>edge://extensions/</code></li>
+                <li><strong>Firefox:</strong> <code>about:debugging#/runtime/this-firefox</code></li>
+            </ul>
+        </div>
+
+        <div class="step">
+            <h3>Step 2: Enable Developer Mode</h3>
+            <p>Toggle "Developer mode" in the top right corner (Chrome/Edge) or click "This Firefox" (Firefox)</p>
+        </div>
+
+        <div class="step">
+            <h3>Step 3: Load Extension</h3>
+            <p>Click "Load unpacked" and select the <code>urms-skin</code> folder</p>
+        </div>
+
+        <div class="step">
+            <h3>Step 4: Test the Extension</h3>
+            <p>Visit <a href="https://urms-online.ulab.edu.bd/" target="_blank">https://urms-online.ulab.edu.bd/</a></p>
+            <p class="success">✓ You should see the modern skin applied automatically</p>
+            <p class="success">✓ Look for the toggle button (🎨) in the top-right corner</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>🎯 Key Features</h2>
+        <ul>
+            <li><strong>Modern Login Interface:</strong> Clean, centered form with gradient backgrounds</li>
+            <li><strong>Enhanced Navigation:</strong> Improved menu with hover effects</li>
+            <li><strong>Responsive Tables:</strong> Better spacing and mobile-friendly design</li>
+            <li><strong>Toggle Functionality:</strong> Switch between original and modern design</li>
+            <li><strong>Non-Invasive:</strong> Doesn't break existing functionality</li>
+            <li><strong>Cross-Browser Compatible:</strong> Works on Chrome, Firefox, Edge, and Opera</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>🔧 How It Works</h2>
+        <p>The extension uses:</p>
+        <ul>
+            <li><strong>Content Scripts:</strong> Inject JavaScript and CSS into URMS pages</li>
+            <li><strong>DOM Manipulation:</strong> Add classes and enhance existing elements</li>
+            <li><strong>CSS Overrides:</strong> Apply modern styling with proper specificity</li>
+            <li><strong>Page Detection:</strong> Automatically detect different URMS pages</li>
+            <li><strong>Responsive Design:</strong> Adapt to different screen sizes</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>⚠️ Important Notes</h2>
+        <div class="warning">
+            <p><strong>Security:</strong> This extension only works on the URMS domain for security</p>
+            <p><strong>Functionality:</strong> All original URMS features remain fully functional</p>
+            <p><strong>Privacy:</strong> No data is collected or transmitted by this extension</p>
+        </div>
+    </div>
+
+    <script>
+        // Simple test to verify JavaScript functionality
+        console.log('URMS Extension Test Page Loaded');
+        
+        // Add a simple demo of the toggle functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const demoButton = document.createElement('button');
+            demoButton.textContent = '🎨 Demo Toggle';
+            demoButton.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                padding: 10px 15px;
+                background: #007BFF;
+                color: white;
+                border: none;
+                border-radius: 25px;
+                cursor: pointer;
+                box-shadow: 0 4px 12px rgba(0,123,255,0.3);
+                z-index: 1000;
+            `;
+            
+            let isDemoMode = false;
+            demoButton.addEventListener('click', function() {
+                isDemoMode = !isDemoMode;
+                if (isDemoMode) {
+                    document.body.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
+                    document.body.style.color = 'white';
+                    demoButton.textContent = '📄 Original';
+                } else {
+                    document.body.style.background = '';
+                    document.body.style.color = '';
+                    demoButton.textContent = '🎨 Demo Toggle';
+                }
+            });
+            
+            document.body.appendChild(demoButton);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,361 @@
+/* URMS Modern Skin - Custom CSS */
+/* Only apply styles when the skin is enabled */
+
+/* Global Reset and Base Styles */
+.urms-skin-enabled * {
+  box-sizing: border-box;
+}
+
+.urms-skin-enabled body {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif !important;
+  color: #333 !important;
+  margin: 0 !important;
+  padding: 20px !important;
+  min-height: 100vh !important;
+  line-height: 1.6 !important;
+}
+
+.urms-skin-enabled .urms-modern-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  overflow: hidden;
+  min-height: calc(100vh - 40px);
+}
+
+/* Header Styles */
+.urms-skin-enabled table:first-child,
+.urms-skin-enabled .urms-modern-wrapper > table:first-child {
+  background: linear-gradient(135deg, #007BFF, #0056b3) !important;
+  color: white !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+}
+
+.urms-skin-enabled table:first-child td {
+  padding: 20px !important;
+  text-align: center !important;
+  font-size: 24px !important;
+  font-weight: 600 !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Navigation Bar Styles */
+.urms-skin-enabled table[bgcolor="#4682B4"],
+.urms-skin-enabled table[style*="background"] {
+  background: linear-gradient(135deg, #007BFF, #0056b3) !important;
+  border-radius: 0 !important;
+  margin: 0 !important;
+}
+
+.urms-skin-enabled table[bgcolor="#4682B4"] td,
+.urms-skin-enabled table[style*="background"] td {
+  padding: 15px 20px !important;
+}
+
+.urms-skin-enabled .nav-link,
+.urms-skin-enabled table[bgcolor="#4682B4"] a,
+.urms-skin-enabled table[style*="background"] a {
+  color: white !important;
+  text-decoration: none !important;
+  padding: 10px 15px !important;
+  border-radius: 8px !important;
+  transition: all 0.3s ease !important;
+  display: inline-block !important;
+  margin: 0 5px !important;
+  font-weight: 500 !important;
+}
+
+.urms-skin-enabled .nav-link:hover,
+.urms-skin-enabled table[bgcolor="#4682B4"] a:hover,
+.urms-skin-enabled table[style*="background"] a:hover {
+  background: rgba(255, 255, 255, 0.2) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Login Page Styles */
+.urms-skin-enabled .login-container {
+  max-width: 450px !important;
+  margin: 60px auto !important;
+  padding: 40px !important;
+  background: white !important;
+  border-radius: 20px !important;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1) !important;
+  border: none !important;
+}
+
+.urms-skin-enabled .login-container td {
+  padding: 15px 0 !important;
+  border: none !important;
+}
+
+.urms-skin-enabled .login-container .modern-input,
+.urms-skin-enabled .login-container input[type="text"],
+.urms-skin-enabled .login-container input[type="password"] {
+  width: 100% !important;
+  padding: 15px 20px !important;
+  font-size: 16px !important;
+  border: 2px solid #e1e5e9 !important;
+  border-radius: 12px !important;
+  background: #f8f9fa !important;
+  transition: all 0.3s ease !important;
+  outline: none !important;
+  font-family: inherit !important;
+}
+
+.urms-skin-enabled .login-container .modern-input:focus,
+.urms-skin-enabled .login-container input[type="text"]:focus,
+.urms-skin-enabled .login-container input[type="password"]:focus {
+  border-color: #007BFF !important;
+  background: white !important;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1) !important;
+  transform: translateY(-2px) !important;
+}
+
+.urms-skin-enabled .login-container .modern-button,
+.urms-skin-enabled .login-container input[type="button"],
+.urms-skin-enabled .login-container input[type="submit"] {
+  width: 100% !important;
+  padding: 15px 0 !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  background: linear-gradient(135deg, #007BFF, #0056b3) !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 12px !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+  margin-top: 10px !important;
+}
+
+.urms-skin-enabled .login-container .modern-button:hover,
+.urms-skin-enabled .login-container input[type="button"]:hover,
+.urms-skin-enabled .login-container input[type="submit"]:hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 10px 25px rgba(0, 123, 255, 0.3) !important;
+}
+
+/* Dashboard Page Styles */
+.urms-skin-enabled .dashboard-page {
+  padding: 20px !important;
+}
+
+.urms-skin-enabled .dashboard-page table {
+  background: white !important;
+  border-radius: 15px !important;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08) !important;
+  border: none !important;
+  margin: 20px 0 !important;
+  overflow: hidden !important;
+}
+
+.urms-skin-enabled .dashboard-page td {
+  padding: 20px !important;
+  border: none !important;
+  border-bottom: 1px solid #f1f3f4 !important;
+}
+
+.urms-skin-enabled .dashboard-page td:last-child {
+  border-bottom: none !important;
+}
+
+/* Modern Tables */
+.urms-skin-enabled .modern-table,
+.urms-skin-enabled .schedule-table {
+  width: 100% !important;
+  background: white !important;
+  border-radius: 15px !important;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08) !important;
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+  margin: 20px 0 !important;
+  overflow: hidden !important;
+}
+
+.urms-skin-enabled .modern-table th,
+.urms-skin-enabled .schedule-table th {
+  background: linear-gradient(135deg, #007BFF, #0056b3) !important;
+  color: white !important;
+  padding: 20px 15px !important;
+  font-weight: 600 !important;
+  text-align: left !important;
+  border: none !important;
+  font-size: 14px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+}
+
+.urms-skin-enabled .modern-table td,
+.urms-skin-enabled .schedule-table td {
+  padding: 15px !important;
+  border: none !important;
+  border-bottom: 1px solid #f1f3f4 !important;
+  transition: background-color 0.2s ease !important;
+}
+
+.urms-skin-enabled .modern-table tr:hover td,
+.urms-skin-enabled .schedule-table tr:hover td {
+  background: #f8f9fa !important;
+}
+
+.urms-skin-enabled .modern-table tr:last-child td,
+.urms-skin-enabled .schedule-table tr:last-child td {
+  border-bottom: none !important;
+}
+
+/* Alert and Status Messages */
+.urms-skin-enabled table[bgcolor="#FF6B6B"],
+.urms-skin-enabled table[style*="background-color: #FF6B6B"] {
+  background: linear-gradient(135deg, #ff6b6b, #ee5a52) !important;
+  color: white !important;
+  border-radius: 12px !important;
+  margin: 20px 0 !important;
+  box-shadow: 0 8px 25px rgba(255, 107, 107, 0.3) !important;
+}
+
+.urms-skin-enabled table[bgcolor="#4CAF50"],
+.urms-skin-enabled table[style*="background-color: #4CAF50"] {
+  background: linear-gradient(135deg, #4CAF50, #45a049) !important;
+  color: white !important;
+  border-radius: 12px !important;
+  margin: 20px 0 !important;
+  box-shadow: 0 8px 25px rgba(76, 175, 80, 0.3) !important;
+}
+
+/* Links */
+.urms-skin-enabled a {
+  color: #007BFF !important;
+  text-decoration: none !important;
+  transition: all 0.3s ease !important;
+}
+
+.urms-skin-enabled a:hover {
+  color: #0056b3 !important;
+  text-decoration: underline !important;
+}
+
+/* Footer */
+.urms-skin-enabled table:last-child {
+  background: #f8f9fa !important;
+  color: #6c757d !important;
+  border-radius: 0 0 20px 20px !important;
+  margin: 0 !important;
+}
+
+.urms-skin-enabled table:last-child td {
+  padding: 20px !important;
+  text-align: center !important;
+  font-size: 12px !important;
+  border: none !important;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .urms-skin-enabled body {
+    padding: 10px !important;
+  }
+  
+  .urms-skin-enabled .urms-modern-wrapper {
+    border-radius: 15px !important;
+    min-height: calc(100vh - 20px) !important;
+  }
+  
+  .urms-skin-enabled .login-container {
+    margin: 30px auto !important;
+    padding: 30px 20px !important;
+    max-width: 90% !important;
+  }
+  
+  .urms-skin-enabled .nav-link,
+  .urms-skin-enabled table[bgcolor="#4682B4"] a,
+  .urms-skin-enabled table[style*="background"] a {
+    display: block !important;
+    margin: 5px 0 !important;
+    text-align: center !important;
+  }
+  
+  .urms-skin-enabled .modern-table,
+  .urms-skin-enabled .schedule-table {
+    font-size: 12px !important;
+  }
+  
+  .urms-skin-enabled .modern-table th,
+  .urms-skin-enabled .schedule-table th,
+  .urms-skin-enabled .modern-table td,
+  .urms-skin-enabled .schedule-table td {
+    padding: 10px 8px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .urms-skin-enabled .login-container {
+    padding: 20px 15px !important;
+  }
+  
+  .urms-skin-enabled table:first-child td {
+    font-size: 18px !important;
+    padding: 15px !important;
+  }
+  
+  .urms-skin-enabled .modern-table,
+  .urms-skin-enabled .schedule-table {
+    font-size: 11px !important;
+  }
+}
+
+/* Animation for smooth transitions */
+.urms-skin-enabled * {
+  transition: all 0.3s ease !important;
+}
+
+/* Custom scrollbar */
+.urms-skin-enabled ::-webkit-scrollbar {
+  width: 8px;
+}
+
+.urms-skin-enabled ::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.urms-skin-enabled ::-webkit-scrollbar-thumb {
+  background: #007BFF;
+  border-radius: 4px;
+}
+
+.urms-skin-enabled ::-webkit-scrollbar-thumb:hover {
+  background: #0056b3;
+}
+
+/* Toggle button styles are handled in content.js */
+.urms-toggle-button {
+  font-family: inherit !important;
+}
+
+/* Loading animation for dynamic content */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.urms-skin-enabled .urms-modern-wrapper {
+  animation: fadeIn 0.6s ease-out;
+}
+
+/* Focus styles for accessibility */
+.urms-skin-enabled *:focus {
+  outline: 2px solid #007BFF !important;
+  outline-offset: 2px !important;
+}
+
+.urms-skin-enabled .modern-input:focus,
+.urms-skin-enabled input:focus {
+  outline: none !important;
+}
