@@ -78,68 +78,110 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
 }
 
-/* Login Page Styles */
-.urms-skin-enabled .login-container {
-  max-width: 450px !important;
-  margin: 60px auto !important;
-  padding: 40px !important;
-  background: white !important;
-  border-radius: 20px !important;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1) !important;
-  border: none !important;
+/* --- Enhanced Login Card & Logo --- */
+.urms-skin-enabled .urms-login-logo {
+  display: block;
+  margin: 0 auto 24px auto;
+  padding: 0;
+  font-family: inherit;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #222;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  background: none;
+  border-radius: 12px;
+  user-select: none;
+  opacity: 0.95;
+  animation: fadeInLogo 0.7s cubic-bezier(.4,2,.6,1) 0.1s both;
 }
 
-.urms-skin-enabled .login-container td {
-  padding: 15px 0 !important;
-  border: none !important;
+@keyframes fadeInLogo {
+  from { opacity: 0; transform: translateY(-20px) scale(0.95); }
+  to { opacity: 0.95; transform: translateY(0) scale(1); }
+}
+
+.urms-skin-enabled .login-container {
+  background: rgba(255,255,255,0.75) !important;
+  box-shadow: 0 12px 40px 0 rgba(80,80,180,0.18), 0 1.5px 8px 0 rgba(0,0,0,0.08) !important;
+  backdrop-filter: blur(18px) saturate(1.2);
+  border: 1.5px solid rgba(200,200,255,0.18) !important;
+  transition: box-shadow 0.4s cubic-bezier(.4,2,.6,1), background 0.4s cubic-bezier(.4,2,.6,1);
+  animation: fadeInLoginCard 0.7s cubic-bezier(.4,2,.6,1) 0.2s both;
+}
+
+@keyframes fadeInLoginCard {
+  from { opacity: 0; transform: translateY(40px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
 }
 
 .urms-skin-enabled .login-container .modern-input,
 .urms-skin-enabled .login-container input[type="text"],
 .urms-skin-enabled .login-container input[type="password"] {
-  width: 100% !important;
-  padding: 15px 20px !important;
-  font-size: 16px !important;
+  background: rgba(255,255,255,0.85) !important;
   border: 2px solid #e1e5e9 !important;
-  border-radius: 12px !important;
-  background: #f8f9fa !important;
-  transition: all 0.3s ease !important;
-  outline: none !important;
-  font-family: inherit !important;
+  box-shadow: 0 1.5px 6px rgba(0,0,0,0.04) !important;
+  border-radius: 14px !important;
+  font-size: 17px !important;
+  margin-bottom: 10px !important;
+  transition: box-shadow 0.3s, border 0.3s;
 }
-
 .urms-skin-enabled .login-container .modern-input:focus,
 .urms-skin-enabled .login-container input[type="text"]:focus,
 .urms-skin-enabled .login-container input[type="password"]:focus {
   border-color: #007BFF !important;
-  background: white !important;
-  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1) !important;
-  transform: translateY(-2px) !important;
+  box-shadow: 0 0 0 4px rgba(0,123,255,0.13) !important;
+  background: #fff !important;
 }
-
 .urms-skin-enabled .login-container .modern-button,
 .urms-skin-enabled .login-container input[type="button"],
 .urms-skin-enabled .login-container input[type="submit"] {
-  width: 100% !important;
-  padding: 15px 0 !important;
-  font-size: 16px !important;
-  font-weight: 600 !important;
-  background: linear-gradient(135deg, #007BFF, #0056b3) !important;
-  color: white !important;
-  border: none !important;
-  border-radius: 12px !important;
-  cursor: pointer !important;
-  transition: all 0.3s ease !important;
-  text-transform: uppercase !important;
-  letter-spacing: 0.5px !important;
-  margin-top: 10px !important;
+  background: linear-gradient(135deg, #007BFF 60%, #0056b3 100%) !important;
+  border-radius: 14px !important;
+  font-size: 17px !important;
+  font-weight: 700 !important;
+  letter-spacing: 1px !important;
+  box-shadow: 0 4px 18px rgba(0,123,255,0.13) !important;
+  margin-top: 16px !important;
+  transition: box-shadow 0.3s, transform 0.2s;
 }
-
 .urms-skin-enabled .login-container .modern-button:hover,
 .urms-skin-enabled .login-container input[type="button"]:hover,
 .urms-skin-enabled .login-container input[type="submit"]:hover {
-  transform: translateY(-3px) !important;
-  box-shadow: 0 10px 25px rgba(0, 123, 255, 0.3) !important;
+  box-shadow: 0 8px 32px rgba(0,123,255,0.22) !important;
+  transform: translateY(-2px) scale(1.03) !important;
+}
+/* Dark mode adaptation for login card and logo */
+@media (prefers-color-scheme: dark) {
+  .urms-skin-enabled .login-container {
+    background: rgba(30,34,54,0.82) !important;
+    border: 1.5px solid rgba(80,80,180,0.22) !important;
+    box-shadow: 0 12px 40px 0 rgba(30,34,54,0.28), 0 1.5px 8px 0 rgba(0,0,0,0.18) !important;
+  }
+  .urms-skin-enabled .urms-login-logo {
+    color: #e6e9f0;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.18);
+  }
+  .urms-skin-enabled .login-container .modern-input,
+  .urms-skin-enabled .login-container input[type="text"],
+  .urms-skin-enabled .login-container input[type="password"] {
+    background: rgba(40,44,64,0.92) !important;
+    color: #e6e9f0 !important;
+    border: 2px solid #3a3f5a !important;
+  }
+  .urms-skin-enabled .login-container .modern-input:focus,
+  .urms-skin-enabled .login-container input[type="text"]:focus,
+  .urms-skin-enabled .login-container input[type="password"]:focus {
+    background: #23263a !important;
+    border-color: #4a90e2 !important;
+    box-shadow: 0 0 0 4px rgba(74,144,226,0.13) !important;
+  }
+  .urms-skin-enabled .login-container .modern-button,
+  .urms-skin-enabled .login-container input[type="button"],
+  .urms-skin-enabled .login-container input[type="submit"] {
+    background: linear-gradient(135deg, #4a90e2 60%, #0056b3 100%) !important;
+    color: #e6e9f0 !important;
+  }
 }
 
 /* Dashboard Page Styles */

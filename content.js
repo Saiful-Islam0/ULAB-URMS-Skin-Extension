@@ -78,6 +78,21 @@
       if (mainTable) {
         mainTable.classList.add('login-container');
         
+        // Inject logo/title if not already present
+        if (!document.querySelector('.urms-login-logo')) {
+          const logoDiv = document.createElement('div');
+          logoDiv.className = 'urms-login-logo';
+          logoDiv.textContent = 'URMS Modern Login';
+          logoDiv.setAttribute('aria-label', 'URMS Modern Login');
+          logoDiv.style.textAlign = 'center';
+          logoDiv.style.fontWeight = 'bold';
+          logoDiv.style.fontSize = '2rem';
+          logoDiv.style.marginBottom = '24px';
+          logoDiv.style.letterSpacing = '1px';
+          logoDiv.style.userSelect = 'none';
+          mainTable.parentNode.insertBefore(logoDiv, mainTable);
+        }
+        
         // Find and enhance form elements
         const inputs = mainTable.querySelectorAll('input[type="text"], input[type="password"]');
         inputs.forEach(input => {
